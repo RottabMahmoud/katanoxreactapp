@@ -1,11 +1,11 @@
-import './App.css';
+import "./App.css";
+import Table from "./components/Table.js";
 
 function App() {
   return (
-
-    // BEM
-    <div className="app">
+    <div className="App">
       <h1>Let's build katanox</h1>
+      <Table />
     </div>
   );
 }
