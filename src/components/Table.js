@@ -2,7 +2,7 @@ import * as React from "react";
 // import Button from "@mui/material/Button";
 import "../App.css";
 import { useStateValue } from "../StateProvider";
-import MaterialTable from "material-table";
+import MaterialTable from "@material-table/core";
 const columns = [
   { field: "id", title: "ID", width: 100 },
   { field: "name", title: "Name", width: 230 },
