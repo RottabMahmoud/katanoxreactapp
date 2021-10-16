@@ -1711,6 +1711,13 @@
     react-is "^16.8.0 || ^17.0.0"
     react-transition-group "^4.4.0"
 
+"@material-ui/icons@^4.11.2":
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.11.2.tgz#b3a7353266519cd743b6461ae9fdfcb1b25eb4c5"
+  integrity sha512-fQNsKX2TxBmqIGJCSi3tGTO/gZ+eJgWmMJkgDiOfyNaunNaxcklJQFaFogYcFl0qFuaEz1qaXYXboa/bUXVSOQ==
+  dependencies:
+    "@babel/runtime" "^7.4.4"
+
 "@material-ui/pickers@3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@material-ui/pickers/-/pickers-3.2.2.tgz#9b7a67f5a8f21f8183853ebc1848e5d8dd680d4c"
@@ -1791,6 +1798,13 @@
     clsx "^1.1.1"
     prop-types "^15.7.2"
     react-is "^17.0.2"
+
+"@mui/icons-material@^5.0.4":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.0.4.tgz#2d1e69c323695a1c6e26be3abcc532818dd442d2"
+  integrity sha512-pW/2bjRGnBZujoLdtH/C+ghT0Tmlk9HmZHF6HuALuVOnRiHF9VwrcNrx0FLHYT0aMARZR4dBA15nU/53R1YNeQ==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
 
 "@mui/material@^5.0.4":
   version "5.0.4"
