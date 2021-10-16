@@ -1,53 +1,101 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Button from "@mui/material/Button";
-
+import "../App.css";
 const columns = [
   { field: "id", headerName: "ID", width: 100 },
-  { field: "firstName", headerName: "First name", width: 230 },
-  { field: "lastName", headerName: "Last name", width: 230 },
+  { field: "name", headerName: "Name", width: 230 },
+  { field: "address", headerName: "Address", width: 230 },
   {
-    field: "age",
-    headerName: "Age",
+    field: "starRating",
+    headerName: "Star Rating",
     type: "number",
     width: 200,
-  },
-  {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 260,
-    valueGetter: (params) =>
-      `${params.getValue(params.id, "firstName") || ""} ${
-        params.getValue(params.id, "lastName") || ""
-      }`,
   },
 ];
 
 const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-  { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-  { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-  { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-  { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+  { id: 1, name: "Marriott", address: "London", starRating: 3 },
+  { id: 2, name: "Hilton", address: "Paris", starRating: 4 },
+  { id: 3, name: "Mahali Mzuri", address: "Masai Mara", starRating: 3 },
+  {
+    id: 4,
+    name: "Nayara Tented Camp",
+    address: "Cairo",
+    starRating: 4,
+  },
+  { id: 5, name: "The Opposite House", address: "California", starRating: 3 },
+  { id: 6, name: "Capella", address: "Paris", starRating: 4 },
+  { id: 7, name: "Capella Ubud", address: "Bali", starRating: 3 },
+  { id: 8, name: " Grace Hotel", address: "Santorini", starRating: 4 },
+  { id: 9, name: " Kamalame Cay", address: "London", starRating: 3 },
+  {
+    id: 10,
+    name: "The Oberoi Udaivilas",
+    address: "Udaipur",
+    starRating: 4,
+  },
+  {
+    id: 11,
+    name: "The Temple House",
+    address: "Chengdu",
+    starRating: 3,
+  },
+  { id: 12, name: "The Oberoi", address: "New Delhi", starRating: 4 },
+  { id: 13, name: "Hotel Paracas", address: "Paracas", starRating: 3 },
+  {
+    id: 14,
+    name: "Taj Holiday Village Resort & Spa",
+    address: "Goa",
+    starRating: 4,
+  },
+  {
+    id: 15,
+    name: "Savute Elephant Lodge",
+    address: "Chobe National Park",
+    starRating: 3,
+  },
+  {
+    id: 16,
+    name: "The Oberoi Vanyavilas Wildlife Resort",
+    address: "Ranthambhore",
+    starRating: 4,
+  },
+  { id: 17, name: "andarin Oriental", address: "Milan", starRating: 3 },
+  { id: 18, name: "La Réserve", address: "Paris", starRating: 4 },
+  {
+    id: 19,
+    name: "Nobu Ryokan Malibu",
+    address: "California",
+    starRating: 3,
+  },
+  { id: 20, name: "Soneva Fushi", address: "Maldives", starRating: 4 },
+  { id: 21, name: "Shangri-La the Shard", address: "London", starRating: 3 },
+  { id: 22, name: "Alila Manggis", address: "Paris", starRating: 4 },
+  { id: 23, name: "Canaves Oia Epitome", address: "London", starRating: 3 },
+  { id: 24, name: "Four Seasons ", address: "Turkey", starRating: 4 },
+  { id: 25, name: "Fasano Boa Vista", address: "London", starRating: 3 },
 ];
 
 export default function DataTable() {
   const [selectionModel, setSelectionModel] = React.useState([]);
+  const [selectedHotels, setSelectedHotels] = React.useState([]);
   const printHotels = () => {
+    var result = [];
     for (let i = 0; i < rows.length; i++) {
-      if (selectionModel.includes(rows[i].id)) console.log(rows[i]);
-    //   console.log(selectionModel[i]);
+      if (selectionModel.includes(rows[i].id)) {
+        result.push(rows[i]);
+        console.log(rows[i]);
+      }
+      //   console.log(result);
+      //   console.log(selectedHotels);
     }
-    // console.log(selectionModel, "HELLO BUTTON");
+    // console.log(result, "ARRAY");
+    setSelectedHotels(result);
   };
+
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ height: 400, width: 1000 }} className="container">
       <DataGrid
         rows={rows}
         columns={columns}
@@ -62,6 +110,19 @@ export default function DataTable() {
       <Button onClick={printHotels} variant="contained">
         Primary
       </Button>
+
+      <div className="list">
+        {selectedHotels.map((hotel) => (
+          <div key={hotel.id}>
+            <div>
+              <p></p>
+              <h2 className="listName">
+                {hotel.id}. {hotel.name}
+              </h2>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

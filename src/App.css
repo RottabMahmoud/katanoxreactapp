@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+.container {
+  position: relative;
+  left: 17%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +38,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  position: relative;
+  top: 0.5em;
+  float: left;
+}
+.list {
+  margin-top: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  justify-content: space-around;
+  margin: 5px, 5px;
+  padding: 10px;
+  width: 98.7%;
+  height: 12em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.listName {
+  color: white;
+  margin: 1rem;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10%;
+  height: 100%;
+  width: 100%;
+}
+p {
+  color: white;
 }
