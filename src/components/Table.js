@@ -31,7 +31,7 @@ function Table() {
   return (
     <div>
       <MaterialTable
-        title="Katanox"
+        title="List of Hotels"
         data={hotels}
         columns={columns}
         options={{
