@@ -2,15 +2,14 @@ import * as React from "react";
 // import Button from "@mui/material/Button";
 import "../App.css";
 import { useStateValue } from "../StateProvider";
-import MaterialTable from "@material-table/core";
+import MaterialTable, { MTableToolbar } from "material-table";
 const columns = [
-  { field: "id", title: "ID", width: 100 },
-  { field: "name", title: "Name", width: 230 },
-  { field: "address", title: "Address", width: 230 },
+  { field: "id", title: "ID" },
+  { field: "name", title: "Name" },
+  { field: "address", title: "Address" },
   {
     field: "starRating",
     title: "Star Rating",
-    width: 200,
   },
 ];
 
@@ -31,11 +30,25 @@ function Table() {
   return (
     <div>
       <MaterialTable
-        title="List of Hotels"
         data={hotels}
         columns={columns}
+        components={{
+          Toolbar: (props) => (
+            <div
+              style={{
+                position: "fixed",
+                bottom: "1.5em",
+                height: "12em",
+              }}
+            >
+              <MTableToolbar {...props} searchable={false} />
+            </div>
+          ),
+        }}
         options={{
+          search: false,
           selection: true,
+          showTitle: false,
           toolbarButtonAlignment: "left",
           actionsColumnIndex: -1,
           addRowPosition: "first",
