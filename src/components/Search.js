@@ -21,7 +21,7 @@ export default function Search() {
     });
   };
   return (
-    <Stack spacing={2} sx={{ width: 500 }}>
+    <Stack style={{ margin: "1em" }} spacing={2} sx={{ width: 500 }}>
       <Autocomplete
         freeSolo
         id="free-solo-2-demo"
