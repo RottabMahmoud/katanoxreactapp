@@ -15,7 +15,7 @@ const columnsS = [
 // hotels: [{ id: 1, name: "Marriott", address: "London", starRating: 3 }];
 // hotels: [{ number: 5, starRating: 3 }];
 function Stats() {
-  const [{ hotels }] = useStateValue();
+  const [{ searchedHotels }] = useStateValue();
   const [addressTable, setAddressTable] = React.useState([]);
   const [starRating, setStarRating] = React.useState([]);
   // Update the Tables Data using React LifeCycle Hook Use effect, and added the [] as the 2nd parameter,
@@ -23,9 +23,9 @@ function Stats() {
   useEffect(() => {
     // An Object to map the The number of hotels by star Rating
     let starsTable = {};
-    for (let i = 0; i < hotels.length; i++) {
-      if (starsTable[hotels[i].starRating]) starsTable[hotels[i].starRating]++;
-      else starsTable[hotels[i].starRating] = 1;
+    for (let i = 0; i < searchedHotels.length; i++) {
+      if (starsTable[searchedHotels[i].starRating]) starsTable[searchedHotels[i].starRating]++;
+      else starsTable[searchedHotels[i].starRating] = 1;
     }
     let starsArray = [];
     for (let i = 0; i < Object.keys(starsTable).length; i++) {
@@ -37,10 +37,10 @@ function Stats() {
     setStarRating(starsArray);
     // An Object to map the The number of hotels by each address
     let addressTable = {};
-    for (let i = 0; i < hotels.length; i++) {
-      if (addressTable[hotels[i].address])
-        addressTable[hotels[i].address].push(hotels[i]);
-      else addressTable[hotels[i].address] = [hotels[i]];
+    for (let i = 0; i < searchedHotels.length; i++) {
+      if (addressTable[searchedHotels[i].address])
+        addressTable[searchedHotels[i].address].push(searchedHotels[i]);
+      else addressTable[searchedHotels[i].address] = [searchedHotels[i]];
     }
     let addressTableStrs = [];
     for (let i = 0; i < Object.keys(addressTable).length; i++) {
