@@ -1,8 +1,10 @@
 import * as React from "react";
-import "../App.css";
 import { useStateValue } from "../StateProvider";
-import MaterialTable, { MTableToolbar } from "material-table";
 import Search from "../components/Search.js";
+import MaterialTable, { MTableToolbar } from "material-table";
+import "../App.css";
+
+// The Main Table Columns Fields
 const columns = [
   { field: "id", title: "ID" },
   { field: "name", title: "Name" },
@@ -14,10 +16,10 @@ const columns = [
 ];
 
 function Table() {
-  // Pull all of the Rows of the Table grid, which are the list of hotels.
+  // The Main Table row's Data
   const [{ hotels }, dispatch] = useStateValue();
 
-  // Remove Hotel from Table row
+  // Handle onRowDelete
   const removeHotel = (id) => {
     dispatch({
       type: "DELETE_HOTEL",
@@ -27,7 +29,6 @@ function Table() {
 
   // This is the List which are going to be printed after selection
   const [selectedHotels, setSelectedHotels] = React.useState([]);
-
   return (
     <div>
       <Search />
@@ -73,6 +74,8 @@ function Table() {
           },
         ]}
       />
+
+      {/* Div for Printing the selected Row's, printing the names list of selected hotels*/}
       {selectedHotels.length > 0 ? (
         <div className="list">
           {selectedHotels.map((hotel) => (

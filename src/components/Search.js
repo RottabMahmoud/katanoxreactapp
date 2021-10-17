@@ -1,24 +1,27 @@
 import * as React from "react";
-import TextField from "@mui/material/TextField";
+import { useStateValue } from "../StateProvider";
 import Stack from "@mui/material/Stack";
 import Autocomplete from "@mui/material/Autocomplete";
-import { useStateValue } from "../StateProvider";
+import TextField from "@mui/material/TextField";
 
 export default function Search() {
+  // Table Data
   const [{ hotels }, dispatch] = useStateValue();
 
+  // On Change event handling
   let onSearch = (event, values) => {
-    // dispatch the item into the data later
     dispatch({
       type: "SEARCH",
       value: values,
     });
   };
+  // OnInputChange event handling
   let afterSearch = () => {
     dispatch({
       type: "RESET",
     });
   };
+
   return (
     <Stack style={{ margin: "1em" }} spacing={2} sx={{ width: 500 }}>
       <Autocomplete

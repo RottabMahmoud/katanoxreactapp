@@ -1,10 +1,10 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -26,9 +26,8 @@ export default function Header() {
           <Button
             component={Link}
             to="/stats"
-            variant="contained"
-            color="primary"
-            style={{ color: "blue", backgroundColor: "white" }}
+            variant="outlined"
+            style={{ color: "#3f51b5", backgroundColor: "white" }}
           >
             Hotel Stats
           </Button>

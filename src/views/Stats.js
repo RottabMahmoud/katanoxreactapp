@@ -1,22 +1,29 @@
-import Button from "@material-ui/core/Button";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 import MaterialTable from "material-table";
 
+// Address Stats Table Columns
 const columnsA = [
   { field: "number", title: "Number of Hotels" },
   { field: "address", title: "Address" },
 ];
+
+// Star Rating Stats Table Columns
 const columnsS = [
   { field: "number", title: "Number of Hotels" },
   { field: "stars", title: "Star Rating" },
 ];
 
 function Stats() {
+  // Our main Table Row's Data
   const [{ hotels }] = useStateValue();
 
+  // Address Table rows Data
   const [addressTable, setAddressTable] = useState([]);
+
+  // StarRating Table rows Data
   const [starRating, setStarRating] = useState([]);
 
   // Update the Tables Data using React LifeCycle Hook Use effect, and added the [] as the 2nd parameter,
@@ -36,7 +43,8 @@ function Stats() {
       starsArray.push({ number: noOfHotels, stars: ratings });
     }
     setStarRating(starsArray);
-    // An Object to map the The number of hotels by each address
+
+    // An Object to map the The number of hotels by address
     let addressTable = {};
     for (let i = 0; i < hotels.length; i++) {
       if (addressTable[hotels[i].address])
@@ -57,6 +65,7 @@ function Stats() {
 
   return (
     <div>
+      {/* Back Button  */}
       <Button
         style={{ margin: "1em" }}
         component={Link}
@@ -67,6 +76,7 @@ function Stats() {
         BACK
       </Button>
 
+      {/* Adresss Stat Table */}
       <MaterialTable
         title="Address Stats"
         data={addressTable}
@@ -80,6 +90,7 @@ function Stats() {
         }}
       />
 
+      {/* Star Ratings Stat Table */}
       <MaterialTable
         title="Star Rating Stats"
         data={starRating}
