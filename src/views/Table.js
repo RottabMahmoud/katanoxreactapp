@@ -25,6 +25,7 @@ function Table() {
       id,
     });
   };
+
   // This is the List which are going to be printed after selection
   const [selectedHotels, setSelectedHotels] = React.useState([]);
 
