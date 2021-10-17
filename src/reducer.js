@@ -60,6 +60,7 @@ export const initialState = {
     { id: 23, name: "Canaves Oia Epitome", address: "London", starRating: 3 },
     { id: 24, name: "Four Seasons ", address: "Turkey", starRating: 4 },
     { id: 25, name: "Fasano Boa Vista", address: "London", starRating: 3 },
+    { id: 26, name: "W Maldives", address: "Maldives", starRating: 7 },
   ],
   searchedHotels: [
     { id: 1, name: "Marriott", address: "London", starRating: 3 },
@@ -122,6 +123,7 @@ export const initialState = {
     { id: 23, name: "Canaves Oia Epitome", address: "London", starRating: 3 },
     { id: 24, name: "Four Seasons ", address: "Turkey", starRating: 4 },
     { id: 25, name: "Fasano Boa Vista", address: "London", starRating: 3 },
+    { id: 26, name: "W Maldives", address: "Maldives", starRating: 7 },
   ],
 };
 

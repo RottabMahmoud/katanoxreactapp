@@ -21,7 +21,7 @@ export default function Search() {
     });
   };
   return (
-    <Stack spacing={2} sx={{ width: 300 }}>
+    <Stack spacing={2} sx={{ width: 500 }}>
       <Autocomplete
         freeSolo
         id="free-solo-2-demo"
@@ -32,7 +32,7 @@ export default function Search() {
         renderInput={(params) => (
           <TextField
             {...params}
-            label="Search input"
+            label="Search hotels"
             InputProps={{
               ...params.InputProps,
               type: "search",
