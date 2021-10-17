@@ -35,8 +35,7 @@
 Table {
   margin: 1em;
 }
-.toolbar {
-  height: 0em;
-  position: realtive;
-  top: 30.6em;
+
+div > .MuiTablePagination-selectRoot {
+  display: none;
 }

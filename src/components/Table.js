@@ -38,7 +38,7 @@ function Table() {
               style={{
                 position: "fixed",
                 bottom: "1.5em",
-                height: "12em",
+                height: "11.5em",
               }}
             >
               <MTableToolbar {...props} searchable={false} />
