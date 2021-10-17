@@ -73,19 +73,20 @@ function Table() {
           },
         ]}
       />
-
-      <div className="list">
-        {selectedHotels.map((hotel) => (
-          <div key={hotel.id}>
-            <div>
-              <p></p>
-              <h2 className="listName">
-                {hotel.id}. {hotel.name}
-              </h2>
+      {selectedHotels.length > 0 ? (
+        <div className="list">
+          {selectedHotels.map((hotel) => (
+            <div key={hotel.id}>
+              <div>
+                <p></p>
+                <h2 className="listName">
+                  {hotel.id}. {hotel.name}
+                </h2>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }
