@@ -17,7 +17,8 @@ function Stats() {
   const [{ hotels }] = useStateValue();
   const [addressTable, setAddressTable] = React.useState([]);
   const [starRating, setStarRating] = React.useState([]);
-  // Update the Tables Data
+  // Update the Tables Data using React LifeCycle Hook Use effect, and added the [] as the 2nd parameter,
+  // as we use setState inside it and we shall avoid the infinite loops
   useEffect(() => {
     // An Object to map the The number of hotels by star Rating
     let starsTable = {};
