@@ -3,7 +3,6 @@ import "../App.css";
 import { useStateValue } from "../StateProvider";
 import MaterialTable, { MTableToolbar } from "material-table";
 import Search from "../components/Search.js";
-
 const columns = [
   { field: "id", title: "ID" },
   { field: "name", title: "Name" },

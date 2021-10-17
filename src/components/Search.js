@@ -8,7 +8,6 @@ export default function Search() {
   const [{ hotels }, dispatch] = useStateValue();
 
   let onSearch = (event, values) => {
-    console.log(values);
     // dispatch the item into the data later
     dispatch({
       type: "SEARCH",
