@@ -1,8 +1,8 @@
 import "./App.css";
-import Table from "./components/Table.js";
+import Table from "./views/Table.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Stats from "./components/Stats";
+import Stats from "./views/Stats";
 
 function App() {
   return (
