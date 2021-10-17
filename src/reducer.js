@@ -1,7 +1,7 @@
 export const initialState = {
   hotels: [
-    { id: 1, name: "Marriott", address: "London", starRating: 3 },
-    { id: 2, name: "Hilton", address: "Paris", starRating: 4 },
+    { id: 1, name: "Marriott", address: "London", starRating: 5 },
+    { id: 2, name: "Hilton", address: "Paris", starRating: 5 },
     { id: 3, name: "Mahali Mzuri", address: "Masai Mara", starRating: 3 },
     {
       id: 4,
@@ -63,8 +63,8 @@ export const initialState = {
     { id: 26, name: "W Maldives", address: "Maldives", starRating: 7 },
   ],
   searchedHotels: [
-    { id: 1, name: "Marriott", address: "London", starRating: 3 },
-    { id: 2, name: "Hilton", address: "Paris", starRating: 4 },
+    { id: 1, name: "Marriott", address: "London", starRating: 5 },
+    { id: 2, name: "Hilton", address: "Paris", starRating: 5 },
     { id: 3, name: "Mahali Mzuri", address: "Masai Mara", starRating: 3 },
     {
       id: 4,
