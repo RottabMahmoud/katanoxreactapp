@@ -1,3 +1,4 @@
+import Button from "@material-ui/core/Button";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
@@ -55,10 +56,9 @@ function Stats() {
 
   return (
     <div>
-      <Link variant="primary" to={"./"}>
-        {" "}
-        &#8592; BACK
-      </Link>
+      <Button style={{margin:"1em"}} component={Link} to="/" variant="outlined" color="primary">
+        BACK
+      </Button>
 
       <MaterialTable
         title="Address Stats"
