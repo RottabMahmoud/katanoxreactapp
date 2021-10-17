@@ -78,10 +78,7 @@ function Table() {
           {selectedHotels.map((hotel) => (
             <div key={hotel.id}>
               <div>
-                <p></p>
-                <h2 className="listName">
-                  {hotel.id}. {hotel.name}
-                </h2>
+                <h2 className="listName">{hotel.name}</h2>
               </div>
             </div>
           ))}
