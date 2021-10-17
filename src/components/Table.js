@@ -36,9 +36,8 @@ function Table() {
           Toolbar: (props) => (
             <div
               style={{
-                position: "fixed",
-                bottom: "1.5em",
-                height: "11.5em",
+                position: "relative",
+                top: "30.6em",
               }}
             >
               <MTableToolbar {...props} searchable={false} />
