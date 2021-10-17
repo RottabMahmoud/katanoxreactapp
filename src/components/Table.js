@@ -18,6 +18,13 @@ function Table() {
   // Pull all of the Rows of the Table grid, which are the list of hotels.
   const [{ hotels }, dispatch] = useStateValue();
 
+  // Remove Hotel from Table row
+  const removeHotel = (id) => {
+    dispatch({
+      type: "DELETE_HOTEL",
+      id,
+    });
+  };
   // This is the List which are going to be printed after selection
   const [selectedHotels, setSelectedHotels] = React.useState([]);
 
@@ -30,6 +37,17 @@ function Table() {
         options={{
           selection: true,
           toolbarButtonAlignment: "left",
+          actionsColumnIndex: -1,
+          addRowPosition: "first",
+        }}
+        editable={{
+          onRowDelete: (selectedRow) =>
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                resolve();
+                removeHotel(selectedRow.id);
+              }, 1000);
+            }),
         }}
         actions={[
           {

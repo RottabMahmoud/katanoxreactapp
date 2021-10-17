@@ -65,10 +65,17 @@ export const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "ADD_HOTEL":
+    case "DELETE_HOTEL":
+      const index = state.hotels.findIndex((hotel) => hotel.id === action.id);
+      let newHotels = [...state.hotels];
+      if (index >= 0) {
+        newHotels.splice(index, 1);
+      } else {
+        console.warn("Can't remove Hotel, as It's not in the List");
+      }
       return {
         ...state,
-        hotels: [...state.rows, action.item],
+        hotels: newHotels,
       };
     default:
       return state;
