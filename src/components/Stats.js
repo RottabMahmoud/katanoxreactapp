@@ -33,10 +33,10 @@ function Stats() {
     }
     let starsArray = [];
     for (let i = 0; i < Object.keys(starsTable).length; i++) {
-      let number = Object.keys(starsTable)[i];
-      let stars = starsTable[number];
+      let ratings = Object.keys(starsTable)[i];
+      let noOfHotels = starsTable[ratings];
 
-      starsArray.push({ number: number, stars: stars });
+      starsArray.push({ number: noOfHotels, stars: ratings });
     }
     setStarRating(starsArray);
     // An Object to map the The number of hotels by each address
