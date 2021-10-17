@@ -24,7 +24,6 @@ export default function Search() {
     <Stack style={{ margin: "1em" }} spacing={2} sx={{ width: 500 }}>
       <Autocomplete
         freeSolo
-        id="free-solo-2-demo"
         disableClearable
         options={hotels.map((option) => option.name)}
         onChange={onSearch}

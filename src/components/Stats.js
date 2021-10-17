@@ -12,12 +12,16 @@ const columnsS = [
   { field: "number", title: "Number of Hotels" },
   { field: "stars", title: "Star Rating" },
 ];
-// hotels: [{ id: 1, name: "Marriott", address: "London", starRating: 3 }];
-// hotels: [{ number: 5, starRating: 3 }];
+
 function Stats() {
+
   const [{ searchedHotels }] = useStateValue();
+
+  
   const [addressTable, setAddressTable] = React.useState([]);
   const [starRating, setStarRating] = React.useState([]);
+
+
   // Update the Tables Data using React LifeCycle Hook Use effect, and added the [] as the 2nd parameter,
   // as we use setState inside it and we shall avoid the infinite loops
   useEffect(() => {
