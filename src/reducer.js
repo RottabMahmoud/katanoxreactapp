@@ -62,6 +62,7 @@ export const initialState = {
     { id: 25, name: "Fasano Boa Vista", address: "London", starRating: 3 },
     { id: 26, name: "W Maldives", address: "Maldives", starRating: 7 },
   ],
+  // A copy of our Data, so after Search Reset the data gets back to it's original state (A work around I thought about)
   searchedHotels: [
     { id: 1, name: "Marriott", address: "London", starRating: 5 },
     { id: 2, name: "Hilton", address: "Paris", starRating: 5 },
